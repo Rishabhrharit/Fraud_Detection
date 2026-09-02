@@ -87,10 +87,15 @@ This project is designed for the official ULB dataset with the following expecte
 - Class target: 0 = genuine, 1 = fraud
 
 Local validation run in this workspace showed:
-- XGBoost ROC-AUC: 1.0000
-- Precision at tuned threshold: 1.0
-- Recall at tuned threshold: 1.0
-- Tuned threshold: 0.49
+- Dataset size: 284,807 transactions
+- XGBoost ROC-AUC: 0.9831
+- XGBoost precision at threshold 0.5: 0.3415
+- XGBoost recall at threshold 0.5: 0.8571
+- XGBoost F1 at threshold 0.5: 0.4884
+- Tuned threshold: 0.90
+- Precision at tuned threshold: 0.8488
+- Recall at tuned threshold: 0.7449
+- F1 at tuned threshold: 0.7935
 - Pytest result: 4 passed, 0 failed
 
 > The real ULB CSV is not downloaded programmatically; the user places it in data/raw/creditcard.csv manually before running the pipeline.
@@ -198,9 +203,9 @@ curl -X POST http://localhost:8000/predict \
 
 | Model | ROC-AUC | F1 | Precision | Recall |
 | --- | ---: | ---: | ---: | ---: |
-| Logistic Regression | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
-| Random Forest | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
-| XGBoost | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| Logistic Regression | 0.9717 | 0.1059 | 0.0562 | 0.9082 |
+| Random Forest | 0.9624 | 0.8539 | 0.9500 | 0.7755 |
+| XGBoost | 0.9831 | 0.4884 | 0.3415 | 0.8571 |
 
 ## Design decisions
 
